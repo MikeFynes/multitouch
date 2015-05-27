@@ -1,5 +1,93 @@
 # multitouch
 Multitouch screen interface for minor project
 
+Multi-touch Project
+User Manual
+Version 1
+Contents
+1 Introduction
+2 Running the application
+3 Adding a new function
+4 Understanding timeouts and changing them
+5 Changing styles
+6 Unity Web Player games
+________________________________________
+1 Introduction
+This user manual is intended to be used to update and maintain the application created for the Multitouch Project 2014.
+This project was created for use on the NEC Multitouch screen in the main lobby of the A-building of Metropolia UAS Leppävaara campus.
+This guide assumes the user is familiar with the application and any new functions to be added are ready to be implemented.
+Files used:
+index.html - this file is the main page of the application and contains all functions displayed such as clock, buttons etc.
+buttons.js - this file is also a critical file, it contains all the functions that allow the buttons on the main page to function, such as the overlay creation and the navigation for the buttons themselves.
+style.css - this file contains all the style CSS elements for the project, some functions have individual style sheets for items only used by that function.
+2 Running the application
+Run from the desktop shortcut for Google Chrome.
+The screen is currently configured for optimal use when opening through this shortcut as it defines that Chrome should start with native Chrome touch gestures blocked, full screen enabled by default and inescapable navigation.
+If migrating to a standalone mini PC it is imperative that this shortcut is replicated on the new device as without it users will be able to exit the application and access the PC.
+________________________________________
+3 Adding a new function
+To add a new function follow the below steps, these instructions can also be found in the top comments of buttons.js.
+The files used should be edited in a text editor such as notepad++
+Step 1 - Create the button in the javascript file buttons.js
+Open the file buttons.js from the main folder
+To add a new button copy the below to the bottom of this page and change anything in capitals:
+replace YOURLINKHERE with the name of your file and its path, for example:
+/myFunction/newPage.html
+replace YOUR INSTRUCTIONS GO HERE with your own instructions and instructions title this can also be used for credits for an application (as seen in the Espoo GuessR application)
+function NEWBUTTON()
+{
+addOverlay("YOURLINKHERE");
+$('#overlay > .wrap > .right > .wrap > .info').append('<div><p><b>Instructions:</b><ol class="instructionList"><li>YOUR INSTRUCTIONS GO HERE </li><li>YOUR INSTRUCTIONS GO HERE</li><li>YOUR INSTRUCTIONS GO HERE</li><li>YOUR INSTRUCTIONS GO HERE</li></ol></div>');
+}
+Save buttons.js
+Step 2. 
+Open index.html
+There are three types of buttons at the time of writing in the application:
+•	Art buttons (red) - used for drawing or other artistic purposes
+•	Function buttons (blue) - used for practical functions such as the lunch menu, reittiopas and the feedback function
+•	Game buttons (orange) - Link to games
+To add a new button copy the below to the button section of this page and change anything in capitals:
+replace BUTTONTYPE with either artButton, functionButton or gameButton
+replace YOURFUNCTIONHERE with the name of your function as defined in buttons.js
+<button class="BUTTONTYPE" draggable="true" onclick="YOURFUNCTIONHERE()">BUTTON TEXT HERE</button>
+To keep future editing simple place your new button in the correct category.
+Save index.html
 
-<html><head><title>Multitouch - User manual</title><meta content="text/html; charset=UTF-8" http-equiv="content-type"></head><body class="c13"><p class="c14 c11 c6 title"><a name="h.3yx2l0wamrgq"></a><span class="c9 c2">Multi-touch Project</span></p><p class="c3 c11"><span></span></p><p class="c14 c11 c6 title"><a name="h.35no3sbt6ioi"></a><span class="c9 c2">User Manual</span></p><p class="c14 c11 c6 title"><a name="h.i6q3awg1dlif"></a><span class="c2 c9">Version 1</span></p><p class="c11 c6 c3 c14 title"><a name="h.1p6dtxg6g723"></a></p><p class="c11 c6 c17 title"><a name="h.4xxwe6pa3bc4"></a><span>Contents</span></p><p class="c1 c3"><span></span></p><p class="c1 c3"><span></span></p><p class="c1 c7"><span class="c4"><a class="c5" href="#h.exh8g5seyaqj">1 Introduction</a></span></p><p class="c1 c7"><span class="c4"><a class="c5" href="#h.aezvp3imhnp">2 Running the application</a></span></p><p class="c1 c7"><span class="c4"><a class="c5" href="#h.bmxr1duief">3 Adding a new function</a></span></p><p class="c1 c7"><span class="c4"><a class="c5" href="#h.69hj2r8l8l8o">4 Understanding timeouts and changing them</a></span></p><p class="c1 c7"><span class="c4"><a class="c5" href="#h.aquogabohlml">5 Changing styles</a></span></p><p class="c1 c7"><span class="c4"><a class="c5" href="#h.q7h4kzfwj7y9">6 Unity Web Player games</a></span></p><p class="c1 c3"><span></span></p><h1 class="c1 c6 c10"><a name="h.fgr46ymvcn4q"></a></h1><hr style="page-break-before:always;display:none;"><h1 class="c1 c6 c10"><a name="h.gmf37fz4ark4"></a></h1><h1 class="c1 c6"><a name="h.9ginfpyvh8y6"></a><span>1 Introduction</span></h1><p class="c1 c3"><span></span></p><p class="c1"><span>This user manual is intended to be used to update and maintain the application created for the Multitouch Project 2014.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>This project was created for use on the NEC Multitouch screen in the main lobby of the A-building of Metropolia UAS Lepp&auml;vaara campus.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>This guide assumes the user is familiar with the application and any new functions to be added are ready to be implemented.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>Files used:</span></p><p class="c1 c3"><span></span></p><p class="c1"><span class="c2">index.html</span><span>&nbsp;- this file is the main page of the application and contains all functions displayed such as clock, buttons etc.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span class="c2">buttons.js</span><span>&nbsp;- this file is also a critical file, it contains all the functions that allow the buttons on the main page to function, such as the overlay creation and the navigation for the buttons themselves.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span class="c2">style.css</span><span>&nbsp;- this file contains all the style CSS elements for the project, some functions have individual style sheets for items only used by that function.</span></p><p class="c1 c3"><span></span></p><h1 class="c1 c6"><a name="h.aezvp3imhnp"></a><span>2 Running the application</span></h1><p class="c1 c3"><span></span></p><p class="c1"><span>Run from the desktop shortcut for Google Chrome.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>The screen is currently configured for optimal use when opening through this shortcut as it defines that Chrome should start with native Chrome touch gestures blocked, full screen enabled by default and inescapable navigation.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>If migrating to a standalone mini PC it is imperative that this shortcut is replicated on the new device as without it users will be able to exit the application and access the PC.</span><hr style="page-break-before:always;display:none;"></p><h1 class="c1 c6"><a name="h.bmxr1duief"></a><span>3 </span><span>Adding a new function</span></h1><p class="c1 c3"><span></span></p><p class="c1"><span>To add a new function follow the below steps, these instructions can also be found in the top comments of </span><span class="c2">buttons.js</span><span>.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>The files used should be edited in a text editor such as notepad++</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>Step 1 - Create the button in the javascript file buttons.js</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>Open the file </span><span class="c2">buttons.js</span><span>&nbsp;from the main folder</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>To add a new button copy the below to the bottom of this page and change anything in capitals:</span></p><p class="c1"><span>replace YOURLINKHERE with the name of your file and its path, for example:</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>/myFunction/newPage.html</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>replace YOUR INSTRUCTIONS GO HERE with your own instructions and instructions title this can also be used for credits for an application (as seen in the Espoo GuessR application)</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>function NEWBUTTON()</span></p><p class="c1"><span>{</span></p><p class="c1"><span>addOverlay(&quot;YOURLINKHERE&quot;);</span></p><p class="c1"><span>$(&#39;#overlay &gt; .wrap &gt; .right &gt; .wrap &gt; .info&#39;).append(&#39;&lt;div&gt;&lt;p&gt;&lt;b&gt;Instructions:&lt;/b&gt;&lt;ol class=&quot;instructionList&quot;&gt;&lt;li&gt;YOUR INSTRUCTIONS GO HERE &lt;/li&gt;&lt;li&gt;YOUR INSTRUCTIONS GO HERE&lt;/li&gt;&lt;li&gt;YOUR INSTRUCTIONS GO HERE&lt;/li&gt;&lt;li&gt;YOUR INSTRUCTIONS GO HERE&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&#39;);</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>}</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>Save buttons.js</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>Step 2. </span></p><p class="c1"><span>Open </span><span class="c2">index.html</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>There are three types of buttons at the time of writing in the application:</span></p><p class="c1 c3"><span></span></p><ul class="c8 lst-kix_k6u5s9nuwbal-0 start"><li class="c0"><span>Art buttons (red) - used for drawing or other artistic purposes</span></li><li class="c0"><span>Function buttons (blue) - used for practical functions such as the lunch menu, reittiopas and the feedback function</span></li><li class="c0"><span>Game buttons (orange) - Link to games</span></li></ul><p class="c1 c3"><span></span></p><p class="c1"><span>To add a new button copy the below to the button section of this page and change anything in capitals:</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>replace BUTTONTYPE with either artButton, functionButton or gameButton</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>replace YOURFUNCTIONHERE with the name of your function as defined in buttons.js</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>&lt;button class=&quot;BUTTONTYPE&quot; draggable=&quot;true&quot; onclick=&quot;YOURFUNCTIONHERE()&quot;&gt;BUTTON TEXT HERE&lt;/button&gt;</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>To keep future editing simple place your new button in the correct category.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>Save index.html</span></p><p class="c1 c3"><span></span></p><p class="c1 c3"><span></span></p><h1 class="c1 c6"><a name="h.69hj2r8l8l8o"></a><span>4 Understanding timeouts and changing them</span></h1><p class="c1 c3"><span></span></p><p class="c1"><span>from </span><span class="c2">index.html</span><span>:</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>The timeout function appears twice in the application, for the main page where it forces a reload of the page and on the layout where it monitores touch events (touch/drag) to determine if the user is interacting with the page or not.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>idleIntervalMain = setInterval(indexTimer, 60000);</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>This piece of javascript creates a variable that increases every 60000 milliseconds (the only thing javascript can count, dates for example are the number of milliseconds since 1st of January 1970)</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>This means that each time 60000milliseconds are counted the function indexTimer is run:</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>function indexTimer() {</span></p><p class="c1"><span>&nbsp; &nbsp; idleTimeMain++;</span></p><p class="c1"><span>&nbsp; &nbsp; if (idleTimeMain &gt;=</span><span class="c16">&nbsp;</span><span class="c2 c16">120 </span><span>) { </span></p><p class="c1"><span>&nbsp; &nbsp; &nbsp; &nbsp; location.reload();</span></p><p class="c1"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearInterval(idleIntervalMain);</span></p><p class="c1"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resetMainTimer();</span></p><p class="c1"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p class="c1"><span>&nbsp; &nbsp; }</span></p><p class="c1"><span>}</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>This function increases the variable idleTimeMain (set at 0 on page load) by one each minute, the if statement checks the value of idleTimeMain and if it is greater or equal to 120 (2 hours) it will reload the main page, clear the interval setup (causing it to restart) and reset idleTimeMain to 0 thus beginning the whole sequence again.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>The only thing to change here would be the highlighted number as this will affect the timeout interval, please note that under the current setup the minimum timeout interval is 1 minute for the timeouts.</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>The function works exactly the same on the overlay the script can be found under </span><span class="c2">buttons.js</span><span>.</span></p><p class="c1 c3"><span></span></p><h1 class="c1 c6"><a name="h.aquogabohlml"></a><span>5 Changing styles</span></h1><p class="c1 c3"><span></span></p><p class="c1"><span>Styles, colours or shapes are changed in a similar fashion to any webpage as it is all stored in the file name </span><span class="c2">style.css</span><span>, please ensure any changes to CSS3 are made compatible with webkit to ensure Chrome compatibility</span></p><p class="c1 c3"><span></span></p><p class="c1"><span>The style.css sheet is clearly commented and has styles for the following functions:</span></p><p class="c1 c3"><span></span></p><p class="c1 c3"><span></span></p><p class="c1"><span>1. MAIN PAGE</span></p><p class="c1"><span>2. OVERLAY</span></p><p class="c1"><span>3. WEATHER APP</span></p><p class="c1"><span>4. FACEBOOK APP</span></p><p class="c1"><span>5. POSTERS</span></p><p class="c1"><span>6. CLOCK</span></p><p class="c1"><span>7. IFRAME &amp; BUTTONS</span></p><p class="c1"><span>8. VIDEO PAGES</span></p><p class="c1"><span>9. FEEDBACK FORM</span></p><p class="c1 c3"><span></span></p><h1 class="c1 c6"><a name="h.q7h4kzfwj7y9"></a><span>6 Unity Web Player games</span></h1><p class="c1 c3"><span></span></p><p class="c1"><span>The original concept for the screen was to involve as many games as possible, this is easily possible by using Unity web player, if a Unity game is built for the Web Player it automatically creates all the necessary HTML. &nbsp;This allows for rapid updates or new functionality to be added.</span></p><div><p class="c1"><span class="c15">Multitouch Project Manual - Version 1</span></p></div></body></html>
+________________________________________
+4 Understanding timeouts and changing them
+from index.html:
+The timeout function appears twice in the application, for the main page where it forces a reload of the page and on the layout where it monitores touch events (touch/drag) to determine if the user is interacting with the page or not.
+idleIntervalMain = setInterval(indexTimer, 60000);
+This piece of javascript creates a variable that increases every 60000 milliseconds (the only thing javascript can count, dates for example are the number of milliseconds since 1st of January 1970)
+This means that each time 60000milliseconds are counted the function indexTimer is run:
+function indexTimer() {
+    idleTimeMain++;
+    if (idleTimeMain >= 120 ) { 
+        location.reload();
+                clearInterval(idleIntervalMain);
+                resetMainTimer();
+        
+    }
+}
+This function increases the variable idleTimeMain (set at 0 on page load) by one each minute, the if statement checks the value of idleTimeMain and if it is greater or equal to 120 (2 hours) it will reload the main page, clear the interval setup (causing it to restart) and reset idleTimeMain to 0 thus beginning the whole sequence again.
+The only thing to change here would be the highlighted number as this will affect the timeout interval, please note that under the current setup the minimum timeout interval is 1 minute for the timeouts.
+The function works exactly the same on the overlay the script can be found under buttons.js.
+________________________________________
+5 Changing styles
+Styles, colours or shapes are changed in a similar fashion to any webpage as it is all stored in the file name style.css, please ensure any changes to CSS3 are made compatible with webkit to ensure Chrome compatibility
+The style.css sheet is clearly commented and has styles for the following functions:
+
+1. MAIN PAGE
+2. OVERLAY
+3. WEATHER APP
+4. FACEBOOK APP
+5. POSTERS
+6. CLOCK
+7. IFRAME & BUTTONS
+8. VIDEO PAGES
+9. FEEDBACK FORM
+
+________________________________________
+6 Unity Web Player games
+The original concept for the screen was to involve as many games as possible, this is easily possible by using Unity web player, if a Unity game is built for the Web Player it automatically creates all the necessary HTML.  This allows for rapid updates or new functionality to be added.
+Multitouch Project Manual - Version 1
