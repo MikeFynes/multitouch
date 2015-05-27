@@ -13,6 +13,7 @@ Contents
 6 Unity Web Player games
 ________________________________________
 1 Introduction
+
 This user manual is intended to be used to update and maintain the application created for the Multitouch Project 2014.
 This project was created for use on the NEC Multitouch screen in the main lobby of the A-building of Metropolia UAS Leppävaara campus.
 This guide assumes the user is familiar with the application and any new functions to be added are ready to be implemented.
@@ -26,6 +27,7 @@ The screen is currently configured for optimal use when opening through this sho
 If migrating to a standalone mini PC it is imperative that this shortcut is replicated on the new device as without it users will be able to exit the application and access the PC.
 ________________________________________
 3 Adding a new function
+
 To add a new function follow the below steps, these instructions can also be found in the top comments of buttons.js.
 The files used should be edited in a text editor such as notepad++
 Step 1 - Create the button in the javascript file buttons.js
@@ -56,6 +58,7 @@ Save index.html
 ________________________________________
 4 Understanding timeouts and changing them
 from index.html:
+
 The timeout function appears twice in the application, for the main page where it forces a reload of the page and on the layout where it monitores touch events (touch/drag) to determine if the user is interacting with the page or not.
 idleIntervalMain = setInterval(indexTimer, 60000);
 This piece of javascript creates a variable that increases every 60000 milliseconds (the only thing javascript can count, dates for example are the number of milliseconds since 1st of January 1970)
@@ -74,6 +77,7 @@ The only thing to change here would be the highlighted number as this will affec
 The function works exactly the same on the overlay the script can be found under buttons.js.
 ________________________________________
 5 Changing styles
+
 Styles, colours or shapes are changed in a similar fashion to any webpage as it is all stored in the file name style.css, please ensure any changes to CSS3 are made compatible with webkit to ensure Chrome compatibility
 The style.css sheet is clearly commented and has styles for the following functions:
 
@@ -89,5 +93,6 @@ The style.css sheet is clearly commented and has styles for the following functi
 
 ________________________________________
 6 Unity Web Player games
+
 The original concept for the screen was to involve as many games as possible, this is easily possible by using Unity web player, if a Unity game is built for the Web Player it automatically creates all the necessary HTML.  This allows for rapid updates or new functionality to be added.
 Multitouch Project Manual - Version 1
