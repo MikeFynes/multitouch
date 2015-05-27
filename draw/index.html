@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="drawingboard.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="drawingboard.min.js"></script>
+
+</head>
+<style>
+#drawingBoard {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+</style>
+<body oncontextmenu="return false">
+<script type="text/javascript">
+function catch_click(e)
+{
+    if (!e) var e = window.event;
+
+    var right_click = (e.which ? (e.which == 3) : (e.button == 2));
+
+    if (right_click)
+    {
+        
+        return false;
+    }
+}
+
+document.onmousedown = catch_click;
+if (document.captureEvents) document.captureEvents(Event.MOUSEDOWN);
+
+
+
+
+</script>
+<div id="drawingBoard">
+</div>
+<script type="text/javascript">
+var defaultBoard = new DrawingBoard.Board('drawingBoard');
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{width:100%;height:100%;margin:0;padding:0;}
+footer{position:absolute;bottom:0;}
+.ui-loader{
+display:none;
+}
+.ui-btn-text{
+display:none;
+}
+input{
+display:inline;
+}
+.ui-btn{
+display:inline;
+}

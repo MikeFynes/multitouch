@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+    <meta charset=utf-8 />
+    <title>Reittiopas</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="js/hsl.js"></script>
+	<script type="text/javascript" src="js/keyboard.js"></script>
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<link type="text/css" rel="stylesheet" href="keyboard.css" />
+	<link rel="shortcut icon" href="img/bus.gif">
+		<script type="text/javascript" language="JavaScript">
+function disableText(e){
+  return false;
+}
+function reEnable(){
+  return true;
+}
+//For browser IE4+
+document.onselectstart = new Function ("return false");
+ 
+//For browser NS6
+if (window.sidebar){
+  document.onmousedown = disableText;
+  document.onclick = reEnable;
+}
+
+function sent()
+{
+alert("Feedback sent!!"); // this is the message in ""
+}
+
+</script>
+</head>
+<body oncontextmenu="return false">
+
+<script type="text/javascript">
+function catch_click(e)
+{
+    if (!e) var e = window.event;
+
+    var right_click = (e.which ? (e.which == 3) : (e.button == 2));
+
+    if (right_click)
+    {
+        
+        return false;
+    }
+}
+
+document.onmousedown = catch_click;
+if (document.captureEvents) document.captureEvents(Event.MOUSEDOWN);
+
+
+
+
+</script>
+	<div id="search">
+		<table id="searchtable">
+			<tr>
+				<td>
+					<label>From:</label>
+				</td>
+				<td id="fromcell">
+					<input type="text" name="ifrom" id="ifrom" value="Vanha Maantie 6">
+				</td>
+				<td id="closecell1">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>To:</label>
+				</td>
+				<td id="tocell">
+					<input type="text" name="ito" id="ito">
+				</td>
+				<td id="closecell2">
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<input type="submit" id="isend" value="Search">
+				</td>
+				<td>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="options"></div>
+	<div id="directions"></div>
+	<div id="map"></div>
+	<div id="keyboardcontainer">
+    <ul id="keyboard">
+	<div id="firstrow">
+        <li class="symbol">1</li>
+        <li class="symbol">2</li>
+        <li class="symbol">3</li>
+        <li class="symbol">4</li>
+        <li class="symbol">5</li>
+        <li class="symbol">6</li>
+        <li class="symbol">7</li>
+        <li class="symbol">8</li>
+        <li class="symbol">9</li>
+        <li class="symbol">0</li>
+        <li class="symbol">-</li>
+        <li class="delete lastitem">delete</li>
+	</div>
+	<div id="secondrow">
+        <li class="letter">q</li>
+        <li class="letter">w</li>
+        <li class="letter">e</li>
+        <li class="letter">r</li>
+        <li class="letter">t</li>
+        <li class="letter">y</li>
+        <li class="letter">u</li>
+        <li class="letter">i</li>
+        <li class="letter">o</li>
+        <li class="letter">p</li>
+        <li class="letter lastitem">å</li>
+        <li class="return lastitem">return</li>
+	</div>
+	<div id="thirdrow">
+        <li class="letter firstitem evenrow">a</li>
+        <li class="letter">s</li>
+        <li class="letter">d</li>
+        <li class="letter">f</li>
+        <li class="letter">g</li>
+        <li class="letter">h</li>
+        <li class="letter">j</li>
+        <li class="letter">k</li>
+        <li class="letter">l</li>
+        <li class="letter">ö</li>
+        <li class="letter">ä</li>
+	</div>
+	<div id="fourthrow">
+		<li class="left-shift firsitem">shift</li>
+        <li class="letter">z</li>
+        <li class="letter">x</li>
+        <li class="letter">c</li>
+        <li class="letter">v</li>
+        <li class="letter">b</li>
+        <li class="letter">n</li>
+        <li class="letter">m</li>
+        <li class="symbol">-</li>
+	</div>
+        <li class="space lastitem">&nbsp;</li>
+    </ul>
+	</div>
+</body>
+	
+</html>

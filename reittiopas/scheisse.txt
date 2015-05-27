@@ -1,0 +1,85 @@
+function routeTable(legs, option, number, walking, coordArray, bounds, duration){
+	option="<table id='option2' class='option'><tr><th>"+number+"</th>";
+	route="<table class='route'><tr><th colspan='2'>"+number+"</th></tr>";
+	for(var i = 0;i < legs.length;i++){
+		var depTime = legs[i].locs[0].depTime;
+		var stopName = legs[i].locs[0].name;
+		var lineName = legs[i].code;
+		if (legs[i].type == "walk") {
+			//route+="<tr><td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/walk.gif' class='icon'></td><td class='stopcell'>";
+			option+="<td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/walk.gif' class='icon'><br>";
+			if(((legs[i].length)/1000).toFixed(1)<0.1){
+				option+="<0.1";
+			}
+			else{
+				option+=((legs[i].length)/1000).toFixed(1);
+			}
+			option+=" km<td>";
+			for (var z=0;z<legs[i].locs.length;z++){
+				if(legs[i].locs[z].name !==null){
+					//route+=" <span class='stopname'>"+legs[i].locs[z].name+"</span><br>";
+					walking=walking+legs[i].length;
+				}
+			}
+			//route+="</td></tr>";
+		}
+		else if(legs[i].type == 12){
+			//route+="<tr><td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/train.gif' class='icon'><br><span class='linename'>"+lineName.substr(lineName.length-3).substr(0,1)+"-train</span></td><td class='stopcell'>";
+			option+="<td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/train.gif' class='icon'><br><span class='linename'>"+lineName.substr(lineName.length-3).substr(0,1)+"-train</span></td>"
+			for (var z=0;z<legs[i].locs.length;z++){
+				if(legs[i].locs[z].name !==null){
+					//route+="<span class='stopname'>"+legs[i].locs[z].name+"</span><br>";
+				}
+			}
+			//route+="</td></tr>";
+		}
+		else if(legs[i].type == 2){
+			//route+="<tr><td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/tram.gif' class='icon'><br><span class='linename'>Tram "+lineName.substr(lineName.length-4).substr(0,1)+"</span></td><td class='stopcell'>";
+			option+="<td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/tram.gif' class='icon'><br><span class='linename'>Tram "+lineName.substr(lineName.length-4).substr(0,1)+"</span></td>";
+			for (var z=0;z<legs[i].locs.length;z++){
+				if(legs[i].locs[z].name !==null){
+					//route+=" <span class='stopname'>"+legs[i].locs[z].name+"</span><br>";
+				}
+			}
+			//route+="</td></tr>";
+		}
+		else if(legs[i].type == 1 || legs[i].type == 3 || legs[i].type == 4 || legs[i].type == 5 || legs[i].type == 8){
+			//route+="<tr><td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/bus.gif' class='icon'><br><span class='linename'>Bus "+lineName.substr(lineName.length-5).substr(0,2)+"</span></td><td class='stopcell'>";
+			option+="<td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/bus.gif' class='icon'><br><span class='linename'>Bus "+lineName.substr(lineName.length-5).substr(0,2)+"</span></td>"
+			for (var z=0;z<legs[i].locs.length;z++){
+				if(legs[i].locs[z].name !==null){
+					//route+=" <span class='stopname'>"+legs[i].locs[z].name+"</span><br>";
+				}
+			}
+			//route+="</td></tr>";
+		}
+		else if(legs[i].type == 6){
+			//route+="<tr><td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/metro.gif' class='icon'>";
+			option+="<td><span class='time'>"+depTime.substr(depTime.length - 4).substr(0,2)+":"+depTime.substr(depTime.length - 4).substr(2,3)+"</span><br><img src='img/metro.gif' class='icon'><br><span class='linename'>Metro</span></td>";
+			if(lineName.substr(lineName.length-1) == "2"){
+				//route+="<br><span class='linename'>Ruoholahti</span>";
+			}
+			else if(lineName.substr(lineName.length-1) == 1 && lineName.substr(lineName.length-3).substr(0,1) == "M"){
+				//route+="<br><span class='linename'>Mellunmäki</span>";
+			}
+			else if(lineName.substr(lineName.length-1) == 1 && lineName.substr(lineName.length-3).substr(0,1) == "V"){
+				//route+="<br><span class='linename'>Vuosaari</span>";
+			}
+			//route+="</td><td class='stopcell'>";
+			for (var z=0;z<legs[i].locs.length;z++){
+				if(legs[i].locs[z].name !==null){
+					//route+=" <span class='stopname'>"+legs[i].locs[z].name+"</span><br>";
+				}
+			}
+			//route+="</td></tr>";
+		}
+			var locs = legs[i].locs;
+			for(var j = 0;j < locs.length;j++){
+				var point = new google.maps.LatLng(locs[j].coord.y, locs[j].coord.x);
+				coordArray.push(point);
+				bounds.extend(point);
+			}
+		}
+		//route+="<tr><td class='stats'>Duration:<br>Distance:</td><td>"+Math.ceil((duration)/60)+" min<br>"+Math.ceil((obj[1][0].length)/1000)+" km</td></tr></table>";
+		option+="<td>Walking:<br>"+(walking/1000).toFixed(1)+" km<br>Duration:<br>"+Math.ceil((duration)/60)+" min</td></tr>"
+}

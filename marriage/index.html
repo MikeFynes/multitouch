@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Marriage Gayme</title>
+		<meta charset="utf-8" />
+		<script src="http://users.metropolia.fi/~junnup/peli/jquery-1.8.1.min.js"></script>
+		<script src="http://users.metropolia.fi/~junnup/peli/jquery.mobile-1.2.0.min.js"></script>
+		<script src="game.js"></script>
+		<link rel="stylesheet" href="marriage.style.css" />
+		<link rel="stylesheet" href="../style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+	</head>
+	<body oncontextmenu="return false" onload="setInterval(anim, 20)" onkeydown="ProcessKeydown(event)" onclick="getMousePosition(event)" style="background:#ffffff url('taustaaaa.png');height:100%;margin:0;overflow-x:hidden;overflow-y:hidden;">
+<script type="text/javascript">
+function catch_click(e)
+{
+    if (!e) var e = window.event;
+
+    var right_click = (e.which ? (e.which == 3) : (e.button == 2));
+
+    if (right_click)
+    {
+        
+        return false;
+    }
+}
+
+document.onmousedown = catch_click;
+if (document.captureEvents) document.captureEvents(Event.MOUSEDOWN);
+
+
+
+
+</script>			
+			<img alt="Anne Holmlund" id="id_enemy" src="anne.png" style="z-index:1;position:absolute;left:100px;top:100px;width:96px;height:92px;">
+				<img alt="flag" id="id_flag" src="kansalais.png" style="z-index:3;position:absolute;left:200px;top:200px;width:72px;height:72px;">
+				<img alt="explosion" id="id_explosion" src="explosion2.gif" style="z-index:2;position:absolute;left:-710px;top:-530px;width:71px;height:100px;display:none;">
+				<form method="get" name="points">
+					<label style="font:bold 2em Arial, sans-serif;">Your score:</label>
+					<input style="margin-top:10px;" name="score" size="15" type="text" id="id_score" readonly="readonly" value="0" />
+					<input class="feedbackButton" type="reset" value="Reset" />
+				</form>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+<title>5 Day weather</title>
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+
+</head>
+<body oncontextmenu="return false">
+<script type="text/javascript">
+function catch_click(e)
+{
+    if (!e) var e = window.event;
+
+    var right_click = (e.which ? (e.which == 3) : (e.button == 2));
+
+    if (right_click)
+    {
+        
+        return false;
+    }
+}
+
+document.onmousedown = catch_click;
+if (document.captureEvents) document.captureEvents(Event.MOUSEDOWN);
+
+
+
+
+</script>
+<div id="weatherBlock">
+<div class="wrap">
+
+<a href="http://www.accuweather.com/en/fi/espoo/133091/allergies-current-weather/133091" class="aw-widget-legal">
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+-->
+</a><div id="awtd1396873234877" class="aw-widget-36hour"  data-locationkey="133091" data-unit="c" data-language="en-us" data-useip="false" data-uid="awtd1396873234877" data-editlocation="false" data-lifestyle="allergies"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+
+
+
+</div>
+</div>
+</body>
+</html>

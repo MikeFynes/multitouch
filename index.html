@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<!--TO ADD A NEW BUTTON COPY THE BELOW AND REPLACE ANYTHING IN CAPITALS WITH YOUR OWN TEXT
+replace BUTTONTYPE with either artButton, functionButton or gameButton
+
+replace YOURFUNCTIONHERE with the name of your function as defined in buttons.js
+
+<button class="BUTTONTYPE" draggable="true" onclick="YOURFUNCTIONHERE()">BUTTON TEXT HERE</button>
+ -->
+<head>
+<title>Touchscreen BETA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="init.js"></script>
+<script type="text/javascript" src="clock.js"></script>
+<script type="text/javascript" src="buttons.js"></script>
+<script type="text/javascript" src="poster_carousel.js"></script>
+
+
+</head>
+<body oncontextmenu="return false">
+
+
+<script>
+// var idleTimeMain = 0;
+
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fi_FI/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+function catch_click(e)
+{
+    if (!e) var e = window.event;
+
+    var right_click = (e.which ? (e.which == 3) : (e.button == 2));
+
+    if (right_click)
+    {
+        
+        return false;
+    }
+}
+
+document.onmousedown = catch_click;
+
+
+if (document.captureEvents) document.captureEvents(Event.MOUSEDOWN);
+/*
+// RELOADS PAGE EVERY TWO HOURS THIS ALLOWS POSTERS & FACEBOOK FEEDS TO UPDATE WITHOUT MANUAL INTERVENTION
+	var idleIntervalMain = setInterval(indexTimer, 3600000); // 1 hour in milliseconds
+
+	function resetMainTimer()
+{
+	idleTimeMain = 0;
+}
+
+// FUNCTION FOR SETTING TIME OUT
+function indexTimer() {
+    idleTimeMain++;
+    if (idleTimeMain >= 2) { // will reload every 2 hours - change this number to increase / decrease timeout interval - NOTE THAT MINIMUM IS ONE HOUR 
+        location.reload();
+		clearInterval(idleIntervalMain);
+		resetMainTimer();
+	
+    }
+}
+*/
+</script>
+
+
+<div class="frame">
+	<div class="wrap">
+		<div class="left">
+			<div class="wrap">
+				<div class="lefttop">
+					<div class="wrap">
+						<div id="clock" class="clock"></div>
+					</div>
+				</div>
+
+				<div class="rightmid">
+		
+				
+				</div>
+				
+			
+				
+				<div class="posters">
+					<div id="poster_carousel" class="poster_carousel" >
+						<img src="posters/1.jpg" alt="1"/>
+						<img src="posters/2.jpg" alt="2"/>
+						<img src="posters/3.jpg" alt="3"/>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="mid" id="boxes">
+			<!-- ADD ALL BUTTONS BELOW HERE -->
+			<!-- ART BUTTONS -->
+				<button class="artButton" draggable="true" onclick="artButton()">Colour Draw!</button>
+				<button class="artButton" draggable="true" onclick="sketchMultiButton()">Sketch pad</button>
+				<button class="artButton" draggable="true" onclick="particleButton()">Particles!</button>
+				
+			<!-- FUNCTION BUTTONS -->
+				<button class="functionButton" draggable="true" onclick="reittiopasButton()">Reittiopas</button>
+				<button class="functionButton" draggable="true" onclick="lunchButton()">Lunch</button>
+				<button class="functionButton" draggable="true" onclick="feedbackButton()">Feedback</button>
+				
+			<!-- GAME BUTTONS -->
+				<button class="gameButton" draggable="true" onclick="espooGuesserButton()">EspooGuessr</button>
+				<button class="gameButton" draggable="true" onclick="flappyButton()">FlappyWorker</button>
+				<button class="gameButton" draggable="true" onclick="lpButton()">Last Planets</button>
+				
+	
+				
+			
+		</div>
+		<div class="right"><div id="fbOverlay">
+			<div class="wrap" >
+				<div class="fb-like-box" data-href="https://www.facebook.com/opiskelijakuntametka" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="true"></div>
+				<div class="fb-like-box" data-href="https://www.facebook.com/pages/LEPO-ry/167057836679228" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="true"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>

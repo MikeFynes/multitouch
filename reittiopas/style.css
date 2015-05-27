@@ -1,0 +1,165 @@
+body{
+font:13px Verdana, Arial, sans-serif;
+color:#444444;
+text-align:center;
+}
+.linename{
+font-weight:normal;
+}
+.route, tr, td{
+vertical-align:top;
+text-align:left;
+}
+.option{
+}
+hr{
+border:1px dashed #8888aa;
+}
+.option td, .option tr, .option th{
+text-align:center;
+vertical-align:middle;
+font-size:12px;
+padding:5px;
+}
+.route{
+width:250px;
+}
+#searchtable {
+margin-top:20px;
+}
+#searchtable td{
+color:#444444;
+vertical-align:middle;
+}
+tr{
+padding:5px;
+}
+.route th{
+font-size:16px;
+text-align:center;
+padding-bottom:10px;
+}
+td.stats{
+font-weight:bold;
+}
+#search{
+background:#ffddbb;
+height:150px;
+width:250px;
+padding:15px;
+border-radius:15px;
+text-align:left;
+margin-left:auto;
+margin-right:auto;
+margin-top:10%;
+vertical-align:middle;
+}
+.icon{
+margin:5px 2px;
+}
+.highlight{
+font-weight:bold;
+}
+#options{
+display:none;
+float:left;
+clear:right;
+width:590px;
+height:150px;
+background:#cfdfff;
+margin:5px;
+padding:15px;
+border-radius:15px;
+overflow:auto;
+text-align:left;
+}
+
+#options::-webkit-scrollbar-track
+{
+	border-radius: 15px;
+	background-color: transparent;
+}
+#options::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+}
+
+#options::-webkit-scrollbar-thumb
+{
+	height:80%;
+	border-radius: 15px;
+	background-color: #ccddff;
+}
+.option th{
+padding-right:20px;
+}
+#directions{
+display:none;
+padding:15px;
+float:left;
+clear:left;
+background:#ffddff;
+width:250px;
+height:600px;
+margin:5px;
+border-radius:15px;
+overflow:auto;
+text-align:center;
+}
+#directions::-webkit-scrollbar-track
+{
+	border-radius: 15px;
+	background-color: transparent;
+}
+#directions::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+}
+
+#directions::-webkit-scrollbar-thumb
+{
+	height:80%;
+	border-radius: 15px;
+	background-color: #ffccdd;
+}
+#map{
+display:none;
+padding:15px;
+float:left;
+width:590px;
+height:600px;
+margin:5px;
+border-radius:15px;
+}
+.statscell{
+padding-left:20px;
+text-align:left;
+}
+.statistics{
+text-align:left;
+}
+input, button{
+color:#444444;
+border-radius: 5px;
+padding:3px 7px;
+border:1px solid #bbbbbb;
+}
+#isend{
+width:100%;
+border-radius: 5px;
+padding:3px 7px;
+background:#ffffff;
+}
+#fromlist, #tolist{
+color:#444444;
+width:165px;
+padding:2px 7px;
+border-radius:5px;
+}
+#close1, #close2{
+background: #ffffff;
+border: 1px solid #aaaaaa;
+padding: 3px 8px 5px 9px;
+}

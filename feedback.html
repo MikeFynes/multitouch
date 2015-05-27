@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+<title>Touchscreen BETA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="keyboard.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="keyboard.js"></script>
+
+	<script type="text/javascript" language="JavaScript">
+function disableText(e){
+  return false;
+}
+function reEnable(){
+  return true;
+}
+//For browser IE4+
+document.onselectstart = new Function ("return false");
+ 
+//For browser NS6
+if (window.sidebar){
+  document.onmousedown = disableText;
+  document.onclick = reEnable;
+}
+
+function sent()
+{
+alert("Feedback sent!!"); // this is the message in ""
+}
+
+</script>
+
+</head>
+
+<body oncontextmenu="return false">
+
+<script type="text/javascript">
+function catch_click(e)
+{
+    if (!e) var e = window.event;
+
+    var right_click = (e.which ? (e.which == 3) : (e.button == 2));
+
+    if (right_click)
+    {
+        
+        return false;
+    }
+}
+
+document.onmousedown = catch_click;
+if (document.captureEvents) document.captureEvents(Event.MOUSEDOWN);
+
+
+
+
+</script>
+
+<div class="formWrap">
+<h1>Please help us improve this tool!</h1><br />
+<form action="scripts/feedback_send.php" method="post" class="feedbackForm">
+
+<h2>How would you rate the colours used in this tool?</h2><br />
+<select name="colorRating">
+  <option value="vGood">Very Good</option>
+  <option value="good">Good</option>
+  <option value="ok">Satisfactory</option>
+  <option value="poor">Poor</option>
+  <option value="vPoor">Very Poor</option>
+</select>
+
+<br /><br />
+<h2>How would you rate the overall look and feel?</h2><br />
+<select name="lookFeel">
+  <option value="vGood">Very Good</option>
+  <option value="good">Good</option>
+  <option value="ok">Satisfactory</option>
+  <option value="poor">Poor</option>
+  <option value="vPoor">Very Poor</option>
+</select>
+<br /><br />
+
+<h2> Free comment </h2>
+<label for="write">Max 500 characters</label><br>
+<textarea name="freeComment" id="write" rows="4" cols="50" maxlength="500"></textarea>
+<div class="feedbackButtonWrap">
+<input class="feedbackButton" type="submit" value="Submit" onClick="sent()">
+<input class="feedbackButton" type="reset" value="Reset">
+</div>
+</form>
+
+<div id="keyboardcontainer">
+    <ul id="keyboard">
+	<div id="firstrow">
+        <li class="symbol">1</li>
+        <li class="symbol">2</li>
+        <li class="symbol">3</li>
+        <li class="symbol">4</li>
+        <li class="symbol">5</li>
+        <li class="symbol">6</li>
+        <li class="symbol">7</li>
+        <li class="symbol">8</li>
+        <li class="symbol">9</li>
+        <li class="symbol">0</li>
+        <li class="symbol">-</li>
+        <li class="delete lastitem">delete</li>
+	</div>
+	<div id="secondrow">
+        <li class="letter">q</li>
+        <li class="letter">w</li>
+        <li class="letter">e</li>
+        <li class="letter">r</li>
+        <li class="letter">t</li>
+        <li class="letter">y</li>
+        <li class="letter">u</li>
+        <li class="letter">i</li>
+        <li class="letter">o</li>
+        <li class="letter">p</li>
+        <li class="letter lastitem">å</li>
+        <li class="return lastitem">return</li>
+	</div>
+	<div id="thirdrow">
+        <li class="letter firstitem evenrow">a</li>
+        <li class="letter">s</li>
+        <li class="letter">d</li>
+        <li class="letter">f</li>
+        <li class="letter">g</li>
+        <li class="letter">h</li>
+        <li class="letter">j</li>
+        <li class="letter">k</li>
+        <li class="letter">l</li>
+        <li class="letter">ö</li>
+        <li class="letter">ä</li>
+	</div>
+	<div id="fourthrow">
+		<li class="left-shift firsitem">shift</li>
+        <li class="letter">z</li>
+        <li class="letter">x</li>
+        <li class="letter">c</li>
+        <li class="letter">v</li>
+        <li class="letter">b</li>
+        <li class="letter">n</li>
+        <li class="letter">m</li>
+        <li class="symbol">-</li>
+	</div>
+        <li class="space lastitem">&nbsp;</li>
+    </ul>
+	</div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
