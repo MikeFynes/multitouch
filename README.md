@@ -2,16 +2,27 @@
 Multitouch screen interface for minor project
 
 Multi-touch Project
+
 User Manual
+
 Version 1
+
 Contents
+
 1 Introduction
+
 2 Running the application
+
 3 Adding a new function
+
 4 Understanding timeouts and changing them
+
 5 Changing styles
+
 6 Unity Web Player games
+
 ________________________________________
+
 1 Introduction
 
 This user manual is intended to be used to update and maintain the application created for the Multitouch Project 2014.
